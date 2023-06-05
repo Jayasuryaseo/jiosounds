@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Subject Mark</title>
+</head>
+<body>
+        <label for="Tamil">Tamil</label>
+        <input type="text" id="Tamil"><br><br>
+        <label for="English">English</label>
+        <input type="text" id="English"><br><br>
+        <label for="Computer">Computer</label>
+        <input type="text" id="Computer"><br><br>
+        <label for="Science">Science</label>
+        <input type="text" id="Science"><br><br>
+        <label for="Social">Social</label>
+        <input type="text" id="Social"><br><br>
+        <button onclick="sum()">To Get Total</button>
+        <button onclick="Average()">To Get Average Mark</button>
+        <button onclick="maxmark()">To Get Maximum Mark Scored</button>
+        <button onclick="minmark()">To Get Minimum Mark Scored</button>
+        <button onclick="showallmarks()">To Show all Marks One By One</button>
+<p id="Total"></p>
+<p id="Average"></p>
+<p id="MaximumMark"></p>
+<p id="MinimumMark"></p>
+<p id="allmarks"></p>
+<script>    
+   
+function sum(){
+    let a = Number(document.getElementById("Tamil").value);
+   let b = Number(document.getElementById("English").value);
+   let c = Number(document.getElementById("Computer").value);
+   let d = Number(document.getElementById("Science").value);
+   let e = Number(document.getElementById("Social").value);
+    let x = a+b+c+d+e;
+    document.getElementById("Total").innerHTML= "Total Marks Of Student=" + "" + x;
+};
+
+function Average(){
+    let a = Number(document.getElementById("Tamil").value);
+   let b = Number(document.getElementById("English").value);
+   let c = Number(document.getElementById("Computer").value);
+   let d = Number(document.getElementById("Science").value);
+   let e = Number(document.getElementById("Social").value);
+   let y = (a+b+c+d+e)/5;
+    document.getElementById("Average").innerHTML= "Average Marks Of Student=" + "" + y;
+}
+
+function maxmark(){
+    let a = Number(document.getElementById("Tamil").value);
+   let b = Number(document.getElementById("English").value);
+   let c = Number(document.getElementById("Computer").value);
+   let d = Number(document.getElementById("Science").value);
+   let e = Number(document.getElementById("Social").value);
+    let f = Math.max(a,b,c,d,e);
+    if(f==a){ document.getElementById("MaximumMark").innerHTML= "Tamil";}
+    else if(f==b){ document.getElementById("MaximumMark").innerHTML= "English";}
+    else if(f==c){ document.getElementById("MaximumMark").innerHTML= "Computer";}
+    else if(f==d){ document.getElementById("MaximumMark").innerHTML= "Science";}
+    else if(f==e){ document.getElementById("MaximumMark").innerHTML= "Social";}
+    else{document.getElementById("MaximumMark").innerHTML="more than one highest marks";}
+}
+
+function minmark(){
+    let a = Number(document.getElementById("Tamil").value);
+   let b = Number(document.getElementById("English").value);
+   let c = Number(document.getElementById("Computer").value);
+   let d = Number(document.getElementById("Science").value);
+   let e = Number(document.getElementById("Social").value);
+   let f = Math.min(a,b,c,d,e);
+   if(f==a){ document.getElementById("MinimumMark").innerHTML= "Tamil";}
+    else if(f==b){ document.getElementById("MaximumMark").innerHTML= "English";}
+    else if(f==c){ document.getElementById("MaximumMark").innerHTML= "Computer";}
+    else if(f==d){ document.getElementById("MaximumMark").innerHTML= "Science";}
+    else if(f==e){ document.getElementById("MaximumMark").innerHTML= "Social";}
+    else{document.getElementById("MinimumMark").innerHTML="more than one lowest marks";}
+    
+}
+
+function showallmarks(){
+    let a = Number(document.getElementById("Tamil").value);
+   let b = Number(document.getElementById("English").value);
+   let c = Number(document.getElementById("Computer").value);
+   let d = Number(document.getElementById("Science").value);
+   let e = Number(document.getElementById("Social").value);
+    document.getElementById("allmarks").innerHTML= "Tamil=" + a +"<br>"+ "English=" + b + "<br>" + "Computer=" + c + "<br>" + "Science=" + d + "<br>" + "Social=" + e;
+}
+
+</script>
+</body>
+
+
+</html>
